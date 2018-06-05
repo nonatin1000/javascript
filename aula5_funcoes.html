@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Curso Javascript Completo 2018</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		function somar(n1, n2){
+			return n1 + n2
+		}
+		var soma = somar(10, 20);
+		console.log(soma);
+
+		var teste = function abacaxi(f){
+			f()
+		};
+		teste(function(){
+			console.log('funcao passada por parametro');
+		});
+
+		console.log('------------------------');
+		var x = 0;
+		function mostraX() {
+			var x = 10;
+			console.log('Mostra x', x);
+		}
+		mostraX()
+		console.log('Mostra x', x);
+		
+	</script>
+</head>
+<body>
+	<h1>Curso JavaScript</h1>
+</body>
+</html>
