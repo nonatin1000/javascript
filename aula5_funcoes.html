@@ -25,7 +25,25 @@
 		}
 		mostraX()
 		console.log('Mostra x', x);
-		
+
+		//Funcoes auto invocaveis IFEE
+		(function(){
+			'use strict'
+			var isValid = false;
+			function somar() {
+				var result = 0;
+				var x = 0;
+				while (arguments[x]){
+					result += arguments[x];
+					x++;
+				}
+				console.log('result:', result);
+			}
+			somar(10, 5, 15, 10);
+		})();
+
+		//console.log(isValid);
+
 	</script>
 </head>
 <body>
