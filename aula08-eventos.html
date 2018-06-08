@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+	<title>Curso Javascript Completo 2018</title>
+	<meta charset="utf-8">
+	
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.css" rel="stylesheet">
+	
+	<script src="js/beluga.js"></script>
+
+</head>
+<body>
+	<div class="container">
+		<h1>Eventos</h1>
+		<button id="btn1" onclick="clicar()">botao 1</button>
+		<button id="btn2">botao 2</button>
+	</div>
+
+	<script>
+		var btn2 = document.getElementById('btn2');
+		
+		// DOM nivel zero - se colocar os parenteses ja executa direto no mund
+		// js
+		btn2.onclick =clicar;
+
+		function clicar () {
+			alert('cliclou'); 
+		}
+	</script>
+	
+</body>
+</html>
