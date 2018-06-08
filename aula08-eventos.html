@@ -15,10 +15,12 @@
 		<h1>Eventos</h1>
 		<button id="btn1" onclick="clicar()">botao 1</button>
 		<button id="btn2">botao 2</button>
+		<button id="btn3">botao 3</button>
 	</div>
 
 	<script>
 		var btn2 = document.getElementById('btn2');
+		var btn3 = document.getElementById('btn3');
 		
 		// DOM nivel zero - se colocar os parenteses ja executa direto no mund
 		// js
@@ -27,6 +29,11 @@
 		function clicar () {
 			alert('cliclou'); 
 		}
+
+		btn3.addEventListener('click', function(){
+			alert('Clicou com dom level 2');
+		});
+
 	</script>
 	
 </body>
