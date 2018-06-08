@@ -17,7 +17,12 @@
 		<button id="btn2">botao 2</button>
 		<button id="btn3">botao 3</button>
 	</div>
-
+	<div class="container">
+		<h1>propagação de eventos</h1>
+		<div id="d1" style="background: red; padding: 25px;">
+			<span style="background: yellow;">texto dentro da span</span>
+		</div>
+	</div>
 	<script>
 		var btn2 = document.getElementById('btn2');
 		var btn3 = document.getElementById('btn3');
@@ -33,6 +38,27 @@
 		btn3.addEventListener('click', function(){
 			alert('Clicou com dom level 2');
 		});
+
+
+		var d1 = document.querySelector('#d1');
+		var d1Span = document.querySelector('#d1 span');
+
+		d1.addEventListener('click', function(e){
+			console.log('clique no d1');
+			e.stopPropagation();
+		}, false);
+
+		d1Span.addEventListener('click', function(e){
+			console.log('click no d1Span');
+			e.stopPropagation();
+		}, false);
+
+		document.addEventListener('click', function(e){
+			console.log('clicou no document');
+			console.log(e.currentTarget);
+			console.log(this);
+			console.log(e.target);
+		}, false);
 
 	</script>
 	
