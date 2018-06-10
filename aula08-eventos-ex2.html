@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+	<title>Curso Javascript Completo 2018</title>
+	<meta charset="utf-8">
+	
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.css" rel="stylesheet">
+	
+	<script src="js/beluga.js"></script>
+
+</head>
+<body>
+	
+	<div class="container">
+		<h1>Eventos Exemplo 2</h1>
+		<form action="#" method='post'>
+			<label for="txtUser"> Usuário</label>
+			<input type="text" id='txtUser' name='user'>
+			<br>
+			<label for="txtPassword">Senha</label>  
+			<input type="password" id="txtPass" name="pass">
+			<br>
+			<button type="submit" id="btn">Logar</button>
+		</form>
+	</div>
+	
+	<script>
+		(function(){
+			'user strict';
+			var form = document.querySelector('form');
+			var txtUser = document.getElementById('txtUser');
+			var txtPass = document.getElementById('txtPass');
+			var btn = document.getElementById('btn');
+
+			form.addEventListener('submit', function(e){
+				if (!txtUser.value || !txtPass.value) {
+					alert('Preencha todos os campos');
+					e.preventDefault();
+				}
+			});
+		})();
+	</script>
+	
+</body>
+</html>
