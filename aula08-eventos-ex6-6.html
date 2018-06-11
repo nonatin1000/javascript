@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+	<title>Curso Javascript Completo 2018</title>
+	<meta charset="utf-8">
+	
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.css" rel="stylesheet">
+	
+	<script src="js/beluga.js"></script>
+	<style>
+		.done{
+			text-decoration: line-through;
+			color: red;
+		}
+	</style>
+
+</head>
+<body>
+	
+	<div class="container">
+		<h1>Eventos Exemplo 6</h1>
+
+		<input type="text" id="txtTask">
+		<button id="btn">Cadastrar tarefa</button>
+		<br>
+		<ul>
+			<li>Estudar Javascript - DOM</li>
+			<li>Estudar Eventos em Javascript</li>
+			<li>Jogar video-game</li>
+		</ul>
+	</div>
+	
+	<script>
+		(function(){
+			'user strict';
+			var ul = document.querySelector('ul');
+			var lis = ul.querySelectorAll('li');
+			var txtTask = document.querySelector('#txtTask');
+			var btn = document.querySelector('#btn');
+			
+			btn.addEventListener('click', addTask);
+			txtTask.addEventListener('keyup', function(e){
+				//13 valor da tecla enter
+				if (e.keyCode === 13) {
+					addTask();
+				}
+			});
+
+			//delegando o evento ao elemento clicado, sem precisar colocar 
+			//os evento em toda as li ocupando memoria de maneira desnecessaria
+			ul.addEventListener('click', function(e){
+				//verifico se o elemento clicado é uma LI
+				if (e.target.nodeName === 'LI') {
+					toggleDone(e.target);
+					removeTask(e.target);
+				}
+			});
+
+			//colocando a classe no li
+			function toggleDone(li){
+				li.classList.toggle('done');
+			}
+
+			function addTask(){
+				//criando uma li para add a uma ul
+				var li = document.createElement('li');
+				//criando um texto para add a li
+				var text = document.createTextNode(txtTask.value);
+
+				// add o texto a uma li
+				li.appendChild(text);
+				//add uma li a uma ul
+				ul.appendChild(li);
+
+				txtTask.value = '';
+				txtTask.focus();
+			}
+
+			function removeTask(li){
+				if (confirm('deseja realmente excluir a tarefa: '+ li.textContent +'?')){
+					//faz a mesma coisa que o parentNode
+					ul.removeChild(li);
+
+					//outra maneira de fazer usando o parenNode
+					//li.parentNode.removeChild(li);
+				}
+			}
+
+		})();
+	</script>
+	
+</body>
+</html>

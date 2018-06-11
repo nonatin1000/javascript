@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+	<title>Curso Javascript Completo 2018</title>
+	<meta charset="utf-8">
+	
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.css" rel="stylesheet">
+	
+	<script src="js/beluga.js"></script>
+
+</head>
+<body>
+	
+	<div class="container">
+		<h1>Eventos Exemplo 6</h1>
+
+		<input type="text" id="txtTask">
+		<button id="btn">Cadastrar tarefa</button>
+		<br>
+		<ul>
+			<li>Estudar Javascript - DOM</li>
+			<li>Estudar Eventos em Javascript</li>
+			<li>Jogar video-game</li>
+		</ul>
+	</div>
+	
+	<script>
+		(function(){
+			'user strict';
+			var ul = document.querySelector('ul');
+			var txtTask = document.querySelector('#txtTask');
+			var btn = document.querySelector('#btn');
+			
+			btn.addEventListener('click', function(){
+				var task = '<li>' + txtTask.value + '</li>';
+				ul.innerHTML += task;
+				txtTask.value = '';
+				txtTask.focus();
+			})
+
+		})();
+	</script>
+	
+</body>
+</html>
