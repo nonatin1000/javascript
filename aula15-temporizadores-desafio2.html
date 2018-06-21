@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+    <title>Logica de Programação Javascript</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <h1>Javascript Completo</h1>
+    <input type="text" id="cronometro">
+    <button id="iniciar">Iniciar</button>
+    <button id="pausar">Pausar</button>
+    <button id="parar">Parar</button>
+    <script>
+        (function(){
+            var cronometro = document.querySelector('#cronometro');
+            var iniciar = document.querySelector('#iniciar');
+            var pausar = document.querySelector('#pausar');
+            var parar = document.querySelector('#parar');
+
+            var msClickIniciar = 0;
+
+            iniciar.addEventListener('click', BtnIniciar);
+            pausar.addEventListener('click', BtnPausar);
+            parar.addEventListener('click', BtnParar);
+
+            function BtnIniciar(){
+                msClickIniciar = Date.now();
+                iniciarCronometro(); 
+            }
+            function BtnPausar(){
+                
+            }
+            function BtnParar(){
+                
+            }
+
+            function iniciarCronometro(){
+                setInterval(function(){
+                    var msAgora = Date.now();
+                    var diferenca = msAgora - msClickIniciar
+                    cronometro.value = formataMs(diferenca);
+                }, 100);
+            }
+            function formataMs(ms){
+                if (ms < 1000){
+                    return ms;
+                }else if (ms < 60000){
+                    var s = ms / 1000;
+                    s = parseInt(s);
+                    var c = ms - (s * 1000);
+                    return s + ':'+ c;
+                }else {
+                    var m = ms  / (60000)
+                    m = parseInt(m);
+                    var s = ms / 1000 - (m * 60);
+                    s = parseInt(s);
+                    var c = ms - (s * 1000) - (m * 60 * 1000);
+                    return m + ':' + s + ':'+ c;
+                }
+            }
+        })()
+    </script>
+</body>
+</html>
