@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8">
+        
+        <script>
+            
+           var obj = {
+               value: 1,
+               add: function(n){
+                   this.value += n;
+                   return this;
+               }, 
+               log: function(){
+                   console.log(this.value);
+                   return this;
+               }
+           }
+           
+           function Add(n){
+               this.value = n || 0;
+               this.add = function(n){
+                   this.value += n;
+                   return this;
+               }
+               this.log = function(){
+                   console.log(this.value);
+                   return this;
+               }
+           }
+            
+           
+           
+            
+        </script>
+        
+    </head>
+    <body>
+        <h1>Curso Javascript Completo 2018</h1>      
+         
+        
+    </body>
+</html>

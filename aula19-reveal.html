@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8">
+        
+        <script>
+            
+           //module pattern
+            var beluga = {
+                number: {
+                    value: 0,
+                    add: function(n){
+                        this.value += n;
+                    },
+                    log: function(){
+                        console.log(this.value);
+                    }   
+                }
+            }
+            
+            //reveal pattern
+            
+            var beluga2 = (function(){
+                var n = 0;
+                
+                function isNumber(_n){
+                    return typeof _n === 'number';
+                }
+                
+                function _add(_n){
+                    if(isNumber(_n)){
+                        n += _n;
+                    }
+                }
+                function _log(){
+                    console.log(n);
+                }
+                
+                return {
+                    add: _add,
+                    log: _log
+                }
+                
+                
+            })()
+            
+           
+            
+        </script>
+        
+    </head>
+    <body>
+        <h1>Curso Javascript Completo 2018</h1>      
+         
+        
+    </body>
+</html>

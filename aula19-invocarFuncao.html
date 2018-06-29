@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8">
+        
+        <script>
+            
+            
+            function teste(str, n){
+                console.log('teste', str, n)
+                console.log(this);
+            }
+            
+            teste();
+            
+            var obj1 = {foo: 'bar'};
+            var obj2 = {foo: 'bar2'};
+            
+            teste.call(obj1, 'minha string', 10);
+            teste.apply(obj1, ['meu texto', 20]);
+            
+            
+        </script>
+        
+    </head>
+    <body>
+        <h1>Curso Javascript Completo 2018</h1>      
+         
+        
+    </body>
+</html>
