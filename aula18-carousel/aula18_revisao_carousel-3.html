@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Javascript Completo</title>
+        <meta charset="utf-8">
+        
+        <link href="carousel.css" rel="stylesheet">
+        
+    </head>
+    <body>
+
+        <main class="content">
+
+            <h1>Javascript Completo</h1>
+
+            <section class="carousel">
+              <div class="carousel__inner">
+                <div class="carousel__item"> <a href=""><img src="images/01.jpg" alt=""></a></div>
+                <div class="carousel__item"> <a href=""><img src="images/02.jpg" alt=""></a></div>
+                <div class="carousel__item"> <a href=""><img src="images/03.jpg" alt=""></a></div>
+                <div class="carousel__item"> <a href=""><img src="images/04.jpg" alt=""></a></div>
+              </div>
+              
+              <button class="carousel__btn carousel__btn--prev" disabled="true"> &lt; </button>
+              <button class="carousel__btn carousel__btn--next"> &gt; </button>
+              
+              <ul class="carousel__paginacao"></ul>
+            </section>
+
+        </main>
+        
+        <script>
+        
+            (function(){                
+                'use strict';
+
+                // mostrar os botoes navegacao e acrescentar listeners
+                var btnPrev = document.querySelector('.carousel__btn--prev');
+                var btnNext = document.querySelector('.carousel__btn--next');
+                var carousel = document.querySelector('.carousel');
+                var carouselInner = document.querySelector('.carousel__inner');
+                var carouselItens = document.querySelectorAll('.carousel__item');
+                var bannerAtual = 0;
+                var qtdBanners = carouselItens.length;
+
+                //incluir overflow hidden no .corousel
+                carousel.style.overflowX = 'hidden';
+
+                btnPrev.style.display = 'block';
+                btnNext.style.display = 'block';
+
+
+                btnPrev.addEventListener('click', showPrev);
+                btnNext.addEventListener('click', showNext);
+
+                function showPrev(){
+                    bannerAtual--;
+                    mostrarBanner(bannerAtual);
+                }
+
+                function showNext(){
+                    bannerAtual++;
+                    mostrarBanner(bannerAtual);
+                }
+
+                function setupNav(bannerAtual){
+                    btnPrev.disabled = !(bannerAtual > 0);
+                    btnNext.disabled = (bannerAtual === qtdBanners -1);
+                }
+
+                function mostrarBanner(bannerAtual){
+                    //desabilitando os botoes
+
+                    setupNav(bannerAtual);
+
+                    var largura = parseInt(getComputedStyle(carouselItens[0]).width);
+                    console.log(largura);
+                    var novaPosicao = largura * bannerAtual * -1;
+                    carouselInner.style.transform = 'translateX(' + novaPosicao + 'px)';
+
+                    carouselInner.style.transform = 'translateX('+ novaPosicao + 'px)';
+                    console.log(novaPosicao, typeof novaPosicao);
+                }
+
+            })()
+        
+        </script>
+        
+    </body>
+</html>

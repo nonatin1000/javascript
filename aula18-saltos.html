@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Javascript Completo</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+       
+        <main class="content">
+        <h1>Aula 18 saltos</h1>
+
+        </main>
+        
+        <script>
+        
+        function testeSaltos(){
+        
+            for (var i = 0; i < 10; i++) {
+                if (i === 5) {
+                    continue;
+                }
+                console.log(i);
+            }
+            console.log('fim do loop');
+            return 'fim da função';
+        }
+        var teste = testeSaltos();
+        console.log(teste);   
+
+        var n = 10;
+        switch (n){
+            case 0:
+                console.log('swicth 0');
+                break;
+            case 10:
+                console.log('swicth 10');
+                break;
+            case 20:
+                console.log('swicth 20');
+                break;
+            case 30:
+                console.log('swicth 30');
+                break;
+            default:
+                console.log('swicth default');
+        }        
+        </script>
+        
+    </body>
+</html>

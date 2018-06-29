@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8">
+        
+        <script>
+            
+            function foo(str){
+                console.log('ola', str);
+            }
+            
+            function executa(cb){
+                var ola = 'mundo';
+                if(cb && typeof cb === 'function') cb(ola);
+            }
+            
+            executa(foo);
+            
+            executa(function teste(){
+                console.log('anonima')
+            });
+            
+            document.addEventListener('click', function clicou(){
+                console.log('clicou');
+            })
+            
+            
+        </script>
+        
+    </head>
+    <body>
+        <h1>Curso Javascript Completo 2018</h1>      
+         
+        
+    </body>
+</html>
