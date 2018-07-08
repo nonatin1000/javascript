@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8">
+        
+        <script src="beluga2.js"></script>
+        
+        
+    </head>
+    <body>
+        <h1>Curso Javascript Completo 2018</h1>      
+        
+    </body>
+    
+    <script>
+        
+        var obj1 = {
+            name: 'obj1',
+            log: function(msg){
+                console.log(msg);
+            }
+        }
+        
+        var obj2 = new Object();
+        obj2.name = 'obj2';
+        
+        function Pessoa(nome){
+            this.nome = nome;
+            this.falar = function(msg){
+                //console.log(this.nome + ' fala: ' + msg);
+                console.log(`${this.nome} está falando: ${msg}`);
+            }
+            this.endereco = "rua qualquer";
+        }
+        
+        var daniel = new Pessoa('daniel');
+        
+        var luana = Object.create(daniel);
+        luana.nome = "Luana";
+        
+        var obj3 = {
+            'nome': 'obj3',
+            'valor': 10
+        }
+        var obj4 = Object.create(obj3);
+        obj4.apelido = 'meu objeto';
+        obj4.nome = 'obj4';
+        obj4.andar = function(){
+            console.log('andando');
+        }
+        
+        for (var prop in obj4){
+            
+            if(obj4.hasOwnProperty(prop)){
+                console.log(prop);
+                console.log(obj4[prop]);
+            }
+        }
+        
+        const keys = Object.keys(obj4);
+        console.log(keys);
+        keys.forEach( (item) => {
+            console.log('a propriedade é: ' + item);
+        } );
+        
+        const values = Object.values(obj4);
+        console.log(values);
+        
+        const entries = Object.entries(obj4);
+        console.log(entries);
+        
+        var nome = 'daniel';
+        var sobrenome = 'tapias morales';
+        
+        /*var eu = {
+            nome: nome,
+            sobrenome: sobrenome
+        }*/
+        let eu = { nome, sobrenome };
+        
+    
+    </script>
+</html>
