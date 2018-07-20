@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+    <title>Curso Javascript Completo 2018</title>
+    <meta charset="utf-8">
+    <script src="beluga2.js"></script>
+</head>
+<body>
+    <h1>Curso Javascript Completo 2018</h1>      
+</body>
+<script>
+
+    function ContaBancaria (cliente, numero) {
+        this.cliente = cliente;
+        this.numero = numero;
+    }
+    // ES5               
+    function ContaCorente (cliente, numero) {
+        /*ContaBancaria.call(this, cliente, numero);
+        this.constructor = ContaCorente;*/
+    };
+
+    //ContaCorente.prototype = new ContaBancaria();
+
+    let cc = new ContaCorente();
+    let cb = new ContaBancaria('daniel', 1);
+    Object.setPrototypeOf(cc, cb);
+    console.log(cc);
+    }
+    
+</script>
+</html>
