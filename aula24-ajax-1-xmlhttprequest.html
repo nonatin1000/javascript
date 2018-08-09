@@ -16,6 +16,19 @@
         function vericaAjax () {
             console.log(xhr.readyState);
             console.log(xhr.status);
+
+            if (xhr.readyState === 4) {
+                alert('sucesso na requisição');
+                if (xhr.status === 200 || xhr.stataus === 304) {
+                    console.log(xhr.responseText);
+                    let resposta = xhr.responseText;
+                    resposta = JSON.parse(resposta);
+                    console.log(resposta[0]);
+                }else{
+                    alert('deu ruim na resposata');
+                    console.log(xhr);
+                }
+            }
         }
     </script>
 </html>
