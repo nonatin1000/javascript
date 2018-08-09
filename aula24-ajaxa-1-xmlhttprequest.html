@@ -9,9 +9,13 @@
         <h1>Curso Javascript Completo 2018</h1>      
     </body>
     <script>
-        setTimeout( function(){
-            console.log('1');
-        }, 0)
-        console.log('2');
+        let xhr = new XMLHttpRequest();
+        xhr.open("GET", "aula24-alunos.json");
+        xhr.send(null);
+        xhr.onreadystatechange = vericaAjax;
+        function vericaAjax () {
+            console.log(xhr.readyState);
+            console.log(xhr.status);
+        }
     </script>
 </html>
